@@ -20,12 +20,12 @@ app.use(
 );
 app.use(express.json());
 app.use(cookieParser()); // ← ye add karo
-
+app.get("/test", (req, res) => {
+  res.send("Test route working ✅");
+});
 app.use("/auth", userRoutes);
 app.use("/api", userRoutes);
-app.get("/", (req, res) => {
-  res.send("API is running 🚀");
-});
+
 
 const PORT = process.env.PORT || 5010;
 
